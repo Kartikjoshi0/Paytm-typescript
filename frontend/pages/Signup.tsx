@@ -31,7 +31,7 @@ export default function Signup(){
             setLoading(true)
         const res=await axios.post("http://localhost:406/api/user/signup",{username,firstName,lastName,password})
         const data=res.data;
-        console.log(data);
+        
         
 
         if(data.token){

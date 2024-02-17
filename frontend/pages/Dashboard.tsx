@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from '../components/Navbar'
 import MyBalance from '../components/MyBalance'
+import UserCard from '../components/UserCard'
 
 
 

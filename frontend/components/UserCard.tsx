@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { transferToUserState } from "../pages/store";
 import React from "react";
 
@@ -12,7 +12,7 @@ interface Props{
 export default function UserCard({username,fullName}: Props){
 
     const navigate= useNavigate();
-    const [transdertoUser,setTransferToUser]=useRecoilState(transferToUserState)
+    const setTransferToUser=useSetRecoilState(transferToUserState)
 
     function handleClick(){
         navigate('/send')

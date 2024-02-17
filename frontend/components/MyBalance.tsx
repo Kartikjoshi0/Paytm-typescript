@@ -12,15 +12,23 @@ export default function MyBalance (){
         'Authorization': `Bearer ${localStorage.getItem('myToken')}`
     }
     useEffect(()=>{
-        axios.get('http://localhost:406/api/account/balance',{headers:headers})
+        try {
+            axios.get('http://localhost:406/api/account/balance',{headers:headers})
         .then(res=>res.data)
+        
         .then(data=>{
             if(data.status > 200){
+                console.log(data);
+                
                 alert(data.msg)
             }else{
                 setBalance(data.msg.balance)
             }
         })
+        } catch (error) {
+            console.log("Balance error",error);
+            
+        }
     },[])
 
 

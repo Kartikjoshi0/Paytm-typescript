@@ -10,7 +10,7 @@ export default function middleware(req: any, res: any, next: any){
     
     
     if (!token) {
-        return res.status(401).json({ msg: "Authorization header is missing or empty updated bc" });
+        return res.status(401).json({ msg: "Authorization header is missing or empty " });
     }
     const myToken = token.split(" ")[1];
     try{

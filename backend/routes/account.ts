@@ -87,7 +87,7 @@ account.post("/transfer", middleware, async (req, res) => {
         
         return res.json({ msg: `₹${amount} transferred successfully.` });
     } catch (error) {
-        res.status(500).json({msg: "Transaction failed! Try again after sometime."})
+        res.status(500).json({msg: "Transaction failed! Try again after sometime.",error})
     }
 })
 

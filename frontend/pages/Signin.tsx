@@ -23,16 +23,15 @@ export default function Signin(){
 
     async function handleSubmit(){
         try {
-            // setLoading(true)
+            setLoading(true)
             const res = await axios.post('http://localhost:406/api/user/signin', { username, password }, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('myToken')}`
                 }
             });
-        console.log("this in logged where ",res);
+     
         const data=res.data;
-        console.log("this in logged where ?????",data);
-        
+       
         if(data.token){
             alert(`${data.msg}`)
             localStorage.setItem('myToken',data.token)
@@ -47,7 +46,7 @@ export default function Signin(){
             alert(`An error occurred while signing up. Please try again later.${error}`);
             
         }finally{
-            // setLoading(false)
+            setLoading(false)
         }
         
     }
